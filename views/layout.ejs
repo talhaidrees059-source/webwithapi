@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || 'Aberdeen Energy Hub' %></title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="../public/css/bootstrap-custom.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/3097/3097143.png"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <% if (page !== 'error') { %> <%- include('./partials/navbar', { page: page,
+    title: title }) %> <% } %>
+
+    <!-- Main Content -->
+    <main><%- include('./partials/navbar', { page: page }) %></main>
+
+    <!-- Footer -->
+    <% if (page !== 'error') { %> <%- include('./partials/footer') %> <% } %>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../public/js/config.js"></script>
+    <script src="../public/js/api-handler.js"></script>
+    <script src="../public/js/components.js"></script>
+    <script src="../public/js/main.js"></script>
+  </body>
+</html>

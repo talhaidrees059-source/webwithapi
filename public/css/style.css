@@ -1,0 +1,220 @@
+/* Aberdeen Energy Hub - Main CSS */
+:root {
+--primary: #0d6efd;
+--secondary: #6c757d;
+--success: #198754;
+--info: #0dcaf0;
+--warning: #ffc107;
+--danger: #dc3545;
+--dark: #212529;
+--light: #f8f9fa;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: #333;
+background: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+color: white;
+padding: 100px 0 60px;
+text-align: center;
+}
+
+.hero-section h1 {
+font-size: 3rem;
+font-weight: 800;
+margin-bottom: 1rem;
+}
+
+.hero-section .lead {
+font-size: 1.5rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+}
+
+/* Stats Cards */
+.stat-card {
+background: rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 15px;
+padding: 25px 15px;
+text-align: center;
+margin: 10px;
+transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+transform: translateY(-5px);
+background: rgba(255, 255, 255, 0.25);
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: 800;
+color: white;
+margin-bottom: 8px;
+display: block;
+}
+
+.stat-label {
+font-size: 1rem;
+color: rgba(255, 255, 255, 0.9);
+font-weight: 500;
+}
+
+/* API Status */
+.api-status {
+display: inline-flex;
+align-items: center;
+padding: 10px 20px;
+border-radius: 50px;
+font-weight: 600;
+margin: 10px;
+}
+
+.status-online {
+background: rgba(25, 135, 84, 0.2);
+color: #198754;
+border: 2px solid rgba(25, 135, 84, 0.3);
+}
+
+.status-offline {
+background: rgba(220, 53, 69, 0.2);
+color: #dc3545;
+border: 2px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Cards */
+.card {
+border: none;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
+margin-bottom: 25px;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Buttons */
+.btn {
+border-radius: 10px;
+padding: 10px 20px;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.btn:hover {
+transform: translateY(-2px);
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), #0b5ed7);
+border: none;
+}
+
+/* Section Titles */
+.section-title {
+text-align: center;
+margin: 3rem 0;
+position: relative;
+padding-bottom: 15px;
+font-size: 2.2rem;
+}
+
+.section-title::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), #26d0ce);
+border-radius: 2px;
+}
+
+/* Navigation */
+.navbar {
+background: rgba(13, 110, 253, 0.95);
+backdrop-filter: blur(10px);
+padding: 15px 0;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+font-size: 1.5rem;
+font-weight: 700;
+color: white !important;
+}
+
+.nav-link {
+color: rgba(255, 255, 255, 0.9) !important;
+font-weight: 500;
+margin: 0 5px;
+padding: 8px 15px !important;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+background: rgba(255, 255, 255, 0.1);
+color: white !important;
+}
+
+/* Footer */
+.footer {
+background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+color: white;
+padding: 50px 0 25px;
+margin-top: 50px;
+}
+
+.footer a {
+color: rgba(255, 255, 255, 0.8);
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer a:hover {
+color: white;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+display: inline-block;
+width: 3rem;
+height: 3rem;
+border: 0.3em solid currentColor;
+border-right-color: transparent;
+border-radius: 50%;
+animation: spinner-border 1s linear infinite;
+}
+
+@keyframes spinner-border {
+to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.hero-section {
+padding: 80px 0 40px;
+}
+.hero-section h1 {
+font-size: 2.2rem;
+}
+.stat-number {
+font-size: 2rem;
+}
+.section-title {
+font-size: 1.8rem;
+}
+}

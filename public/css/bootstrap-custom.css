@@ -1,0 +1,37 @@
+/* Bootstrap 5 Custom Overrides */
+:root {
+--bs-primary: #0d6efd;
+--bs-secondary: #6c757d;
+--bs-success: #198754;
+--bs-info: #0dcaf0;
+--bs-warning: #ffc107;
+--bs-danger: #dc3545;
+--bs-border-radius: 12px;
+--bs-border-radius-lg: 15px;
+}
+
+.btn {
+--bs-btn-border-width: 2px;
+--bs-btn-font-weight: 600;
+}
+
+.btn-primary {
+--bs-btn-bg: linear-gradient(135deg, var(--bs-primary), #0b5ed7);
+--bs-btn-border-color: transparent;
+}
+
+.card {
+--bs-card-border-width: 0;
+--bs-card-border-radius: var(--bs-border-radius-lg);
+--bs-card-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.alert {
+--bs-alert-border-radius: var(--bs-border-radius);
+--bs-alert-border-width: 0;
+}
+
+.badge {
+--bs-badge-font-weight: 600;
+--bs-badge-border-radius: 20px;
+}

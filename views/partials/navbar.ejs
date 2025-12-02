@@ -1,0 +1,172 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-lg">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-oil-well me-2"></i>
+      <strong>Aberdeen Energy Hub</strong>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/">
+            <i class="fas fa-home me-1"></i> Home
+          </a>
+        </li>
+
+        <!-- Quick Scroll Links -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <i class="fas fa-rocket me-1"></i> Quick Jump
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#companies">Companies</a></li>
+            <li><a class="dropdown-item" href="#market">Market Data</a></li>
+            <li><a class="dropdown-item" href="#news">News</a></li>
+            <li><a class="dropdown-item" href="#weather">Weather</a></li>
+            <li><a class="dropdown-item" href="#projects">Projects</a></li>
+          </ul>
+        </li>
+        <!-- API Navigation Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <i class="fas fa-database me-1"></i> Load API Data
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item api-nav-item"
+                href="#"
+                data-endpoint="/api/companies"
+              >
+                <i class="fas fa-building me-2"></i> Companies
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item api-nav-item"
+                href="#"
+                data-endpoint="/api/market"
+              >
+                <i class="fas fa-chart-line me-2"></i> Market Data
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item api-nav-item"
+                href="#"
+                data-endpoint="/api/news"
+              >
+                <i class="fas fa-newspaper me-2"></i> News
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item api-nav-item"
+                href="#"
+                data-endpoint="/api/weather"
+              >
+                <i class="fas fa-cloud-sun me-2"></i> Weather
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item api-nav-item"
+                href="#"
+                data-endpoint="/api/projects"
+              >
+                <i class="fas fa-project-diagram me-2"></i> Projects
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#" onclick="app.loadAllData()">
+                <i class="fas fa-sync-alt me-2"></i> Load All Data
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a
+            class="nav-link <%= page === 'api-status' ? 'active' : '' %>"
+            href="/api-status"
+          >
+            <i class="fas fa-server me-1"></i> API Status
+          </a>
+        </li> -->
+      </ul>
+
+      <!-- API Status Badge -->
+      <div class="navbar-text me-3">
+        <span id="nav-api-status" class="badge bg-success">
+          <i class="fas fa-circle fa-xs me-1"></i>
+          API Ready
+        </span>
+      </div>
+
+      <!-- Refresh Button -->
+      <button class="btn btn-outline-light btn-sm" onclick="app.loadAllData()">
+        <i class="fas fa-sync-alt me-1"></i> Refresh All
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  body {
+    padding-top: 76px;
+  }
+
+  .navbar {
+    background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%) !important;
+  }
+
+  .api-nav-item {
+    cursor: pointer;
+  }
+
+  .api-nav-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+  }
+</style>
+
+<script>
+  // Update navbar API status
+  function updateNavStatus(status, message) {
+    const badge = $("#nav-api-status");
+    if (status === "success") {
+      badge.removeClass("bg-danger bg-warning").addClass("bg-success");
+      badge.html('<i class="fas fa-circle fa-xs me-1"></i> API Online');
+    } else if (status === "error") {
+      badge.removeClass("bg-success bg-warning").addClass("bg-danger");
+      badge.html('<i class="fas fa-exclamation-circle me-1"></i> API Error');
+    } else {
+      badge.removeClass("bg-success bg-danger").addClass("bg-warning");
+      badge.html('<i class="fas fa-sync-alt fa-spin me-1"></i> Loading...');
+    }
+  }
+</script>
