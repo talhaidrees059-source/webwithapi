@@ -8,15 +8,22 @@
     "dev": "nodemon server.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
-  "keywords": ["express", "ejs", "bootstrap", "api", "dynamic-web", "nodejs"],
+  "keywords": [
+    "express",
+    "ejs",
+    "bootstrap",
+    "api",
+    "dynamic-web",
+    "nodejs"
+  ],
   "author": "CE2000 Student",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "ejs": "^3.1.9",
     "axios": "^1.6.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
